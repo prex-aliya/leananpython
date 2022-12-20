@@ -3,12 +3,12 @@
 # This is pretty much the same as the last one just some changes
 # at the bottom
 #
-# Another Resource(I did not copy this):
-# https://www.codevscolor.com/python-print-half-star-pyramid
+# Questions? Try looking it up on
+# https://docs.python.org/
 #
 # You only need to know the bottom vvv
 # the top is mostly fluf to get
-# good user experienc
+# good user experience
 
 
 # imports sys to use sys.exit()
@@ -23,7 +23,8 @@ def help():
     print("[+] python problemset01.py [-f | num less 8] [num]");
     print("\t-f is to force a bigger number or a negative");
     print("\t   (which does nothing)");
-    sys.exit();
+    # exit with one, which tells there was an error
+    sys.exit(1);
 
 def invalid():
         print("[-] Invalid");
@@ -65,30 +66,27 @@ else:
 
 # Really only need this vvv
 
+
+
+# This is a key word to make a function
+# https://www.geeksforgeeks.org/python-def-keyword/
+def print_piramid(ammount, cart):
+    print(cart * ammount + cart, end="");
+
+
 for x in range(size):
 
     # print white space. range from x to size,
     # which inverses the range, when size increases
     # the ammount it prints gets bigger, but gradually
     # gets less and less
-    for y in range(x, size, 1):
-        print(" ", end="");
 
-    # prints the Volume of the inversed Triangle.
-    # starting with 0-1, then going to size,
-    for y in range(0, x):
-        print("#", end="");
+    print_piramid(size-x, " ");
+    print_piramid(x, "#");
 
-    # THIS IS THE ONLY CODE CHANGE: this quickly makes the first
-    # normal oriented piramid before, line by line.
-        # this print the last line since we
-        # know that that line is always there
-        # and instead of ending with a newline
-        # we add a space to see the spli between the two
-    print("#", end=" ");
-
-    for y in range(0, x):
-        print("$", end="");
-    print("$");
+    print(" ", end="");
+    print_piramid(x, "$");
+    # This print the newline charactor
+    print("\n");
 
 # vim: textwidth=64
