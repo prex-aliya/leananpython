@@ -59,10 +59,19 @@ python.
 <!-- end of section one -->
 
 
+# END
+
+I suggest to use [codewars](https://www.codewars.com/) to get even better at python.
+
+
 # Sources
 
 [Harvard cs50 module for python](https://cs50.harvard.edu/x/2022/psets/6/)
 
 [Harvards cs50 youtube channel](https://www.youtube.com/c/cs50/videos)
+
+
+
+
 
 <!-- vim: textwidth=64
