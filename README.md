@@ -72,6 +72,4 @@ I suggest to use [codewars](https://www.codewars.com/) to get even better at pyt
 
 
 
-
-
 <!-- vim: textwidth=64
