@@ -16,6 +16,7 @@ and format.
 ___if you feel that I was sub par is some manner do not hesitate to
 fix it___
 
+_see LICENCE for more information or [website](https://unlicense.org/)_
 
 <!-- end of intro -->
 
@@ -26,6 +27,7 @@ fix it___
 Get real comfortable with a search engine of your choice.
 I suggest [Brave Search](https://search.brave.com/) and
 [DuckDuckGo](https://duckduckgo.com/), in my opinion brave has better results.
+Better learn how to look stuff up now rather than later.
 
 
 <!-- Details of Section One -->
