@@ -79,6 +79,16 @@ for x in range(size):
     for y in range(0, x):
         print("#", end="");
 
-    print("#");
+    # THIS IS THE ONLY CODE CHANGE: this quickly makes the first
+    # normal oriented piramid before, line by line.
+        # this print the last line since we
+        # know that that line is always there
+        # and instead of ending with a newline
+        # we add a space to see the spli between the two
+    print("#", end=" ");
+
+    for y in range(0, x):
+        print("$", end="");
+    print("$");
 
 # vim: textwidth=64

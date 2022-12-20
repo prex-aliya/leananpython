@@ -76,6 +76,8 @@ for x in range(size):
     for y in range(0, x):
         print("#", end="");
 
+    # this print the last line since we
+    # know that that line is always there
     print("#");
 
 # vim: textwidth=64

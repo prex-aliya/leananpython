@@ -10,6 +10,9 @@
 
 print("Hello, World!");
 
+# The ; at the end is not neccissary
+# and I do it out of habbit but you do not
+# have to
 
 
 # this is irrelevent just for the editor vim, to help beautify
