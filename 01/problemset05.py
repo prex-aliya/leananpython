@@ -48,12 +48,12 @@ if length not in [13, 16]:
 print(f"[+] length is: {length}");
 
 numbers = [0] * 16;
-for x in range(15, 0, -1):
-    #print(input - round(input, -1));
-    numbers[x] = input - round(input, -1);
-    print(round(input, -1))
-    print(input)
-    input = floor(input*0.1)#round(input, shift)
+#for x in range(15, 0, -1):
+#    #print(input - round(input, -1));
+#    numbers[x] = input - round(input, -1);
+#    print(round(input, -1))
+#    print(input)
+#    input = floor(input*0.1)#round(input, shift)
 
 if numbers[0] not in [6, 5, 4] and length == 13:
     if numbers[3] not in [6, 5, 4]:
