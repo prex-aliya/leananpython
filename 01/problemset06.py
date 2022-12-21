@@ -60,15 +60,18 @@ if prompt_user == True:
 
 
 
+# Defining inital variables
 letters = 0;
 words = 0;
 sentances = 0;
 
+# peice together the arguments from cmd
 input = arguments[findit];
 for x in range(findit+1, length):
     input += arguments[x];
     words += 1;
 
+# count how many letters are in the peiced together input
 for x in input:
     if x.isalpha(): letters += 1;
     if x == "." or x == "!" or x == "?":
@@ -90,8 +93,15 @@ verbose("Sentances Count per 100 Words:\t", round(sentances_ph));
 reading_level = round((0.0588 * letters_ph) - (0.296 *
                             sentances_ph) - 15.8);
 
+# Just Quality of Life, this makes it so if you provide a very
+# small inserpt of text it tells the user that more may be
+# needed
 if reading_level <= 0:
     reading_level = 1;
+    verbose("More input may be needed", "");
+
+print();
+positive("The Text You Provided is Grade: ", reading_level);
 
 
 
