@@ -37,7 +37,7 @@ def length(num):
 # This gets input from user and only accepts it if the input is
 # an intager.
 try:
-    input = int(input("Card Number: "));
+    input = int(input("Card Number: ").replace('-', ''));
 except:
     error("possible input violation");
 
@@ -47,23 +47,34 @@ if length not in [13, 16]:
     error("invalid card number format");
 print(f"[+] length is: {length}");
 
-numbers = [0] * 16;
-#for x in range(15, 0, -1):
-#    #print(input - round(input, -1));
-#    numbers[x] = input - round(input, -1);
-#    print(round(input, -1))
-#    print(input)
-#    input = floor(input*0.1)#round(input, shift)
+# makes the number into an array
+numbers = [0] * length;
+for x in range(length, 0, -1):
+    numbers[x-1] = input % 10;
+    input = floor(input * 0.1);
 
-if numbers[0] not in [6, 5, 4] and length == 13:
-    if numbers[3] not in [6, 5, 4]:
-        print("[+] not a credit card number");
+# checks if the first numbers are valid for a card company
+# stated above ^^^
+cardven = "unknown";
+if numbers[0] in [6, 5, 4]:
+    if numbers[0] == 6:
+        cardven = "Discover";
+    elif numbers[0] == 5:
+        cardven = "Master";
+    elif numbers[0] == 4:
+        cardven = "Visa";
 
 
+for x in range(1, length, 2):
+    addin = numbers[x]*2;
+    if addin > 10:
+        numbers[x] = addin - 9;
+    else:
+        numbers[x] = addin;
 
-print(numbers);
+print(sum(numbers));
 
-print("[+] Valid card number format");
+#print("[+] Valid card number format");
 
 
 
