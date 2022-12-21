@@ -7,12 +7,18 @@
 # This is how the formula works.
 
 import sys;
+import re;
 
 arguments = sys.argv;
 length = len(arguments);
 
 def help():
-    print("[+] usage: python problemset05.py [credit card num]");
+    print("[+] usage: python problemset06.py [-v][-n][sentance]");
+    print("\t -v verbose output");
+    print("\t -n sentance input from terminal everything\n");
+    print("\t\t after this command no matter what.");
+    print("To get a actually good output you will need to")
+    print("\tprovide at least a paragraph of text, prefably 500 words")
     sys.exit(1);
 def warning(err):
     if verbose == True: print("[-] An Error Occurred: " + err);
@@ -40,8 +46,13 @@ if length != 1:
             except: error("Argument input has failed");
             prompt_user = False;
             positive("CMD Arguments Enabled", "");
+            break;
 
-if prompt_user == True: error("No use of -n argument");
+if prompt_user == True:
+    try:
+        input = input("Sentance Input: ");
+    except:
+        error("Possible input violation");
 
 
 
@@ -51,7 +62,7 @@ if prompt_user == True: error("No use of -n argument");
 
 letters = 0;
 words = 0;
-sentances = len(re.findall(r"[^?!.][?!.]", paragraph));
+sentances = 0;
 
 input = arguments[findit];
 for x in range(findit+1, length):
@@ -60,11 +71,27 @@ for x in range(findit+1, length):
 
 for x in input:
     if x.isalpha(): letters += 1;
-    print(x);
+    if x == "." or x == "!" or x == "?":
+        sentances += 1;
 
-print(letters);
-print(words);
-print(sentances);
+verbose("Letter Count:\t", letters);
+verbose("words Count:\t", words);
+verbose("Sentances Count:\t", sentances);
+
+letters_ph   = letters/words*100;
+sentances_ph = sentances/words*100;
+
+print(); # prints new line
+verbose("Letter Count per 100 Words:\t\t", round(letters_ph));
+verbose("Sentances Count per 100 Words:\t", round(sentances_ph));
+
+# CLI = 0.0588L - 0.296S - 15.8
+# This is the Equation ^ its horable for small ammounts of text
+reading_level = round((0.0588 * letters_ph) - (0.296 *
+                            sentances_ph) - 15.8);
+
+if reading_level <= 0:
+    reading_level = 1;
 
 
 
