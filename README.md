@@ -59,6 +59,13 @@ python.
 <!-- end of section one -->
 
 
+# Section 99
+
+This Section is a museum for me for the extra programs written
+in python that I have made, its good to have things like this to
+see how you have progressed or haven't.
+
+
 # END
 
 I suggest to use [codewars](https://www.codewars.com/) to get even better at python.

@@ -36,21 +36,21 @@ prompt_user = True;
 if length != 1:
     for x in range(1, length):
         if arguments[x] == "-v":
-            to_verbose = True;
-            positive("Verbose Enabled", "");
+            to_verbose = true;
+            positive("verbose enabled", "");
         if arguments[x] == ("-help" or "--help"):
             help();
         if arguments[x] == "-n":
             try:
                 findit = x+1;
-            except: error("Argument input has failed");
-            prompt_user = False;
-            positive("CMD Arguments Enabled", "");
+            except: error("argument input has failed");
+            prompt_user = false;
+            positive("cmd arguments enabled", "");
             break;
 
-if prompt_user == True:
+if prompt_user == true:
     try:
-        input = input("Sentance Input: ");
+        input = input("sentance input: ");
     except:
         error("Possible input violation");
 
