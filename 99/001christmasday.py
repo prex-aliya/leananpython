@@ -80,14 +80,25 @@ def main():
     if current.month == 12 and current.day >= 25:
         try: year_c = int(year_c);
         except: error("Failed to convert year into intager");
-    try: date2 = datetime(day=25, month=12, year=int(year_c));
+    try: date2 = datetime(day=25, month=12, year=int(year_c),
+                          hour=8);
+    # personal family tradition
     except: error("Failed to convert date into intager");
 
 
     timedelta = date2 - current;
 
-    verbose("Time In Seconds {}".format(timedelta.seconds +
-                                        (timedelta.days*86400)));
+    delta_seconds = timedelta.seconds;
+    delta_minuets = delta_seconds*60;
+    delta_hours   = delta_minuets*60;
+
+    verbose("Time left in Seconds {}".format(timedelta.total_seconds()));
+    verbose("Days: {}".format(timedelta.days));
+    #verbose("Hours: {}".format(delta_hours));
+    #verbose("Minuets: {}".format(delta_minuets));
+    verbose("Seconds: {}".format(timedelta.seconds));
+    verbose("MicroSeconds: {}".format(timedelta.microseconds));
+
     print("Only {0} Days and {1} Hours Left!".format(timedelta.days,
                     round(timedelta.seconds/60/60, 2)));
 
